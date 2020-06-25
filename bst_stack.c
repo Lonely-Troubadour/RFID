@@ -50,6 +50,7 @@ int main(int argc, char const * argv[]) {
     len = n;
     // Allocate spaces for stack
     stack = (char * ) malloc(sizeof(char) * MAX_STACK_SIZE);
+    memset(stack, '\0', MAX_STACK_SIZE);
     ptr = stack;
     * ptr = '0';
     
@@ -117,7 +118,7 @@ int main(int argc, char const * argv[]) {
                 default:
                     break;
             }
-
+            if (step > 15) break;
             // Reset status. Step += 1
             status = 0;
             step++;
